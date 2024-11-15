@@ -22,7 +22,7 @@ def create_app():
     if not os.path.exists(app.config['SESSION_FILE_DIR']):
         os.makedirs(app.config['SESSION_FILE_DIR'])
     
-    CORS(app,  resources={r'/*': {"origins": ["http://localhost:5173", "http://localhost:3000"],
+    CORS(app,  resources={r'/*': {"origins": "*",
                                   "allow_headers": "*",
                                   "methods": ["GET", "POST"]}},
          supports_credentials=True)
